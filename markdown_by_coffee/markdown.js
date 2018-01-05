@@ -3,14 +3,23 @@
   var MarkdownEditor, editor;
 
   MarkdownEditor = (function() {
-    marked.setOptions({
-      breaks: true
-    });
-
     function MarkdownEditor(editorId, displayId) {
       this.editor = document.getElementById(editorId);
       this.display = document.getElementById(displayId);
+      this.setOptions();
     }
+
+    MarkdownEditor.prototype.setOptions = function() {
+      var renderer;
+      renderer = new marked.Renderer();
+      renderer.code = function(code, language) {
+        return '<pre' + '><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+      };
+      return marked.setOptions({
+        breaks: true,
+        renderer: renderer
+      });
+    };
 
     MarkdownEditor.prototype.subscriptEditorOnKeyUp = function() {
       var lazyFunc;

@@ -1,11 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 50px 100px;
+  color: #706D7F;
 }
 
 #edit {

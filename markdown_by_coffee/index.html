@@ -10,6 +10,8 @@
     crossorigin="anonymous"></script> -->
   <script src="https://unpkg.com/marked@0.3.6"></script>
   <script src="https://unpkg.com/lodash@4.16.0"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/solarized_light.min.css">
 </head>
 <body>
 
@@ -18,6 +20,26 @@
   <div id="markdownDisplay"></div>
 </div>
 
+<script>
+  editor = document.getElementById("markdownEditor")
+  editor.placeholder = `
+◆マークダウンの書き方◆
+# -> h1
+## -> h2
+### -> h3
+
+\`\`\` samp.rb
+  コードハイライト
+\`\`\`
+
+|テーブル|が|かけるよ|
+|-----:|-:|------:|
+|テーブル|が|かけるよ|
+
+
+  `
+
+</script>
 <script type="text/javascript" src="markdown.js"></script>
 </body>
 </html>
